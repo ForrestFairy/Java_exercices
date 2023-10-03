@@ -13,6 +13,7 @@ public class Recorder extends JFrame {
     java.util.List playList = new ArrayList();
 
     Recorder() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         record.setSelectedIcon(new ImageIcon("red.gif"));
 
         ActionListener buttAct = new ActionListener() {
