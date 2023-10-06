@@ -256,7 +256,7 @@ public class DrawPanel extends JPanel {
             x = e.getX();
             y = e.getY();
 
-            if (!e.isMetaDown()) {
+            if (e.getButton() != MouseEvent.BUTTON3) {
 
                 if (source == rectangle && !dragged.isSelected()) {
                     drawCall("rectangle");
@@ -287,7 +287,7 @@ public class DrawPanel extends JPanel {
 
         public void mouseReleased(MouseEvent e) {
             found = false;
-            if (e.isPopupTrigger()) {
+            if (e.getButton() == MouseEvent.BUTTON3) {
                 x = e.getX();
                 y = e.getY();
                 change.show(e.getComponent(), x, y);
