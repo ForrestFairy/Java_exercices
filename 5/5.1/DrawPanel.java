@@ -1,9 +1,10 @@
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Arc2D;
+import java.awt.geom.*;
 
 import javax.swing.*;
+import javax.swing.event.*;
 
 public class DrawPanel extends JPanel {
     
@@ -144,7 +145,7 @@ public class DrawPanel extends JPanel {
 
         mouseHandler = new MouseHandler();
         addMouseListener(mouseHandler);
-        // addMouseMotionListener(mouseHandler);
+        addMouseMotionListener(mouseHandler);
 
         rand = new Random();
     }
@@ -247,7 +248,7 @@ public class DrawPanel extends JPanel {
         }
     }
 
-    class MouseHandler implements MouseListener {
+    class MouseHandler implements MouseInputListener {
 
         Figure fig;
         boolean found;
@@ -302,6 +303,7 @@ public class DrawPanel extends JPanel {
             }
         }
 
+        public void mouseMoved(MouseEvent e) {}
         public void mouseEntered(MouseEvent e) {}
         public void mouseExited(MouseEvent e) {}
         public void mouseClicked(MouseEvent e) {}
