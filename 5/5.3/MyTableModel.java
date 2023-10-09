@@ -1,4 +1,3 @@
-import javax.swing.*;
 import javax.swing.table.*;
 
 public class MyTableModel extends DefaultTableModel {
